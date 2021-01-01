@@ -9,9 +9,22 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import json
 
 
 class Ui_MainWindow(object):
+
+
+    def __init__(self,MainWindow,Api_Key = None):
+        self.setupUi(MainWindow)
+        if  not Api_Key:
+            #FIXME
+            item= QtWidgets.QInputDialog.getItem(MainWindow, "Please Enter API KEY", "To get your Api key <a href = https://newsapi.org/register > Click Here </a>")
+            if item: 
+                with open('interpreter/data.json', "a") as f:
+                    json.dump({"API_KEY" : item}, f)
+            
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(715, 514)
@@ -118,4 +131,3 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-
