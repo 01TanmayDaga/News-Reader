@@ -18,7 +18,8 @@ class config(Ui_MainWindow):
                 dicti = json.load(f)
                 self.API_KEY = dicti['API_KEY']
             self.newsapi = NewsApiClient(api_key = self.API_KEY)
-            self.list_contents =[]            
+            self.list_contents =[]      
+            self.      
             self.add_option()
             self.add_details()
             self.add_action() 
@@ -65,7 +66,7 @@ class config(Ui_MainWindow):
             
         #   Page 1
 
-            #Adding Language
+            #Adding Category
             for i in dicti['top_headline_category']:
                 self.Cat.addItem(i)
 
@@ -77,7 +78,7 @@ class config(Ui_MainWindow):
 
             #Adding Language
             for i in dicti['everything_language'].keys():
-                self.count.addItem(i)
+                self.Language.addItem(i)
 
             #Adding sortBy
             for i in dicti['everything_sortBy'].keys():
@@ -118,21 +119,18 @@ class config(Ui_MainWindow):
 
         else : 
             q = self.q_3.displayText()
-            with open('data/data.jon') as f:
+            with open('data/data.json') as f:
                 dicti = json.load(f)
                 Language = dicti['everything_language'][self.Language.currentText()]
-                sortby = dicti['everything_language'][self.Sort_by.currentText()]
+                sortby = dicti['everything_sortBy'][self.Sort_by.currentText()]
             self.everything_add(q,Language,sortby) 
 
     def top_headline_add(self,q, category,country):
 
         response = self.newsapi.get_top_headlines(q=q,category=category,country=country)
-        
+        self.del_content_boxes()
         m=0
-        if self.list_contents:
-            for k in self.list_contents:
-                self.verticalLayout.removeWidget(k)
-    
+        
         for i in response['articles']:
             if m==3:
                 break
@@ -141,11 +139,8 @@ class config(Ui_MainWindow):
     
     def everything_add(self,q,lang,sorty):
         response = self.newsapi.get_everything(q=q,language=lang,sort_by=sorty)
+        self.del_content_boxes()
         m=0
-        if self.list_contents:
-            for k in self.list_contents:
-                self.verticalLayout.removeWidget(k)
-    
         for i in response['articles']:
             if m==3:
                 break
@@ -158,7 +153,16 @@ class config(Ui_MainWindow):
         
         self.list_contents.append(obj)
         self.verticalLayout.addWidget(obj)
-
+    
+    def del_content_boxes(self):
+        
+        if len(self.list_contents) > 0:
+            for items in self.list_contents:
+        #         self.verticalLayout.removeWidget(items) 
+        # self.verticalLayout.update()
+                    items.hide()
+            import trial
+            trial.main()
 def main():
     app = QApplication(sys.argv)
     UI = QMainWindow()

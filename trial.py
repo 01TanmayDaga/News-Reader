@@ -1,3 +1,4 @@
 import os
-for items in os.listdir('temp'):
-    os.remove(f"temp/{items}")
+def main():
+    for items in os.listdir('temp'):
+        os.remove(f"temp/{items}")

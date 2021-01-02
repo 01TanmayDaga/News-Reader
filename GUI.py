@@ -95,7 +95,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
         self.main_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.main_frame.setObjectName("main_frame")
         self.verticalLayoutWidget = QtWidgets.QWidget(self.main_frame)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 2, 720, 511))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 2, 720, 461))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
