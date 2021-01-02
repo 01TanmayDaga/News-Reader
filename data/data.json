@@ -1,6 +1,6 @@
 {
     "top_headline_country": {
-        "UAE": "ae",
+        "India": "in",
         "Argentina": "ar",
         "Austria": "at",
         "Australia": "au",
@@ -23,7 +23,7 @@
         "Indonesia": "id",
         "Ireland": "ie",
         "Isarel": "il",
-        "India": "in",
+        "UAE": "ae",
         "Italy": "it",
         "Japan": "jp",
         "Korea": "kr",
@@ -55,28 +55,33 @@
         "Venezula": "ve",
         "South Africa": "za"
     },
-    "top_headline_category" : ["business", "entertainment", "general", "health", "science", "sports", "technology"],
-    
-    "everything_language" : {
-        "Arabic" : "ar",
-        "Germany":"de",
-        "English":"en",
-        "Spanish":"es",
-        "French":"fr",
-        "Hebrew":"he",
-        "Italian":"it",
-        "Dutch":"nl",
-        "Norwegian":"no",
-        "Portugese":"pt",
-        "Russian":"ru",
-        "Northern Sami":"se"
+    "top_headline_category": [
+        "business",
+        "entertainment",
+        "general",
+        "health",
+        "science",
+        "sports",
+        "technology"
+    ],
+    "everything_language": {
+        "Arabic": "ar",
+        "Germany": "de",
+        "English": "en",
+        "Spanish": "es",
+        "French": "fr",
+        "Hebrew": "he",
+        "Italian": "it",
+        "Dutch": "nl",
+        "Norwegian": "no",
+        "Portugese": "pt",
+        "Russian": "ru",
+        "Northern Sami": "se"
     },
-
-    "everything_sortBy" : {
-        "Relevancy" : "relevancy",
-        "Popularity" : "popularity ",
-        "Published At" : "publishedAt"
+    "everything_sortBy": {
+        "Relevancy": "relevancy",
+        "Popularity": "popularity ",
+        "Published At": "publishedAt"
     },
-
-    "API_KEY" : null 
+    "API_KEY": "9659803702a54e11b4478b56acb581f7"
 }

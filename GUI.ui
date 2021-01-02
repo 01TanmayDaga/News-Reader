@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>715</width>
-    <height>514</height>
+    <width>720</width>
+    <height>511</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,12 +19,12 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>701</width>
+      <width>720</width>
       <height>51</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="main_page">
      <widget class="QLineEdit" name="q_2">
@@ -79,7 +79,7 @@
        <rect>
         <x>410</x>
         <y>10</y>
-        <width>101</width>
+        <width>131</width>
         <height>31</height>
        </rect>
       </property>
@@ -98,9 +98,9 @@
      <widget class="QComboBox" name="count">
       <property name="geometry">
        <rect>
-        <x>530</x>
+        <x>570</x>
         <y>10</y>
-        <width>111</width>
+        <width>131</width>
         <height>31</height>
        </rect>
       </property>
@@ -108,46 +108,8 @@
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>660</x>
-        <y>10</y>
-        <width>41</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>media/Profile.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
     </widget>
     <widget class="QWidget" name="page_2">
-     <widget class="QLabel" name="label_2">
-      <property name="geometry">
-       <rect>
-        <x>660</x>
-        <y>10</y>
-        <width>41</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>media/Profile.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
      <widget class="QComboBox" name="Option_2">
       <property name="geometry">
        <rect>
@@ -174,9 +136,9 @@
      <widget class="QComboBox" name="Language">
       <property name="geometry">
        <rect>
-        <x>530</x>
+        <x>570</x>
         <y>10</y>
-        <width>111</width>
+        <width>131</width>
         <height>31</height>
        </rect>
       </property>
@@ -189,7 +151,7 @@
        <rect>
         <x>410</x>
         <y>10</y>
-        <width>101</width>
+        <width>131</width>
         <height>31</height>
        </rect>
       </property>
@@ -231,16 +193,32 @@
      </widget>
     </widget>
    </widget>
-   <widget class="QWidget" name="verticalLayoutWidget">
+   <widget class="QFrame" name="main_frame">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>59</y>
-      <width>681</width>
-      <height>431</height>
+      <x>0</x>
+      <y>52</y>
+      <width>720</width>
+      <height>461</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="mainlayout"/>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QWidget" name="verticalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>2</y>
+       <width>720</width>
+       <height>511</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout"/>
+    </widget>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>

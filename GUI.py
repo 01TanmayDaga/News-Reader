@@ -9,29 +9,17 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import json
 
 
-class Ui_MainWindow(object):
-
-
-    def __init__(self,MainWindow,Api_Key = None):
-        self.setupUi(MainWindow)
-        if  not Api_Key:
-            #FIXME
-            item= QtWidgets.QInputDialog.getItem(MainWindow, "Please Enter API KEY", "To get your Api key <a href = https://newsapi.org/register > Click Here </a>")
-            if item: 
-                with open('interpreter/data.json', "a") as f:
-                    json.dump({"API_KEY" : item}, f)
-            
-
-    def setupUi(self, MainWindow):
+class Ui_MainWindow(QtWidgets.QWidget):
+    def __init__(self, MainWindow):
+        super().__init__()
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(715, 514)
+        MainWindow.resize(720, 511)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.stackedWidget_2 = QtWidgets.QStackedWidget(self.centralwidget)
-        self.stackedWidget_2.setGeometry(QtCore.QRect(0, 0, 701, 51))
+        self.stackedWidget_2.setGeometry(QtCore.QRect(0, 0, 720, 51))
         self.stackedWidget_2.setObjectName("stackedWidget_2")
         self.main_page = QtWidgets.QWidget()
         self.main_page.setObjectName("main_page")
@@ -55,7 +43,7 @@ class Ui_MainWindow(object):
         self.Option.setCurrentText("")
         self.Option.setObjectName("Option")
         self.Cat = QtWidgets.QComboBox(self.main_page)
-        self.Cat.setGeometry(QtCore.QRect(410, 10, 101, 31))
+        self.Cat.setGeometry(QtCore.QRect(410, 10, 131, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.Cat.setFont(font)
@@ -63,24 +51,12 @@ class Ui_MainWindow(object):
         self.Cat.setCurrentText("")
         self.Cat.setObjectName("Cat")
         self.count = QtWidgets.QComboBox(self.main_page)
-        self.count.setGeometry(QtCore.QRect(530, 10, 111, 31))
+        self.count.setGeometry(QtCore.QRect(570, 10, 131, 31))
         self.count.setEditable(False)
         self.count.setObjectName("count")
-        self.label = QtWidgets.QLabel(self.main_page)
-        self.label.setGeometry(QtCore.QRect(660, 10, 41, 31))
-        self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap(".\\media/Profile.png"))
-        self.label.setScaledContents(True)
-        self.label.setObjectName("label")
         self.stackedWidget_2.addWidget(self.main_page)
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
-        self.label_2 = QtWidgets.QLabel(self.page_2)
-        self.label_2.setGeometry(QtCore.QRect(660, 10, 41, 31))
-        self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap(".\\media/Profile.png"))
-        self.label_2.setScaledContents(True)
-        self.label_2.setObjectName("label_2")
         self.Option_2 = QtWidgets.QComboBox(self.page_2)
         self.Option_2.setGeometry(QtCore.QRect(210, 10, 181, 31))
         font = QtGui.QFont()
@@ -92,11 +68,11 @@ class Ui_MainWindow(object):
         self.Option_2.setCurrentText("")
         self.Option_2.setObjectName("Option_2")
         self.Language = QtWidgets.QComboBox(self.page_2)
-        self.Language.setGeometry(QtCore.QRect(530, 10, 111, 31))
+        self.Language.setGeometry(QtCore.QRect(570, 10, 131, 31))
         self.Language.setEditable(False)
         self.Language.setObjectName("Language")
         self.Sort_by = QtWidgets.QComboBox(self.page_2)
-        self.Sort_by.setGeometry(QtCore.QRect(410, 10, 101, 31))
+        self.Sort_by.setGeometry(QtCore.QRect(410, 10, 131, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.Sort_by.setFont(font)
@@ -113,19 +89,24 @@ class Ui_MainWindow(object):
         self.q_3.setReadOnly(False)
         self.q_3.setObjectName("q_3")
         self.stackedWidget_2.addWidget(self.page_2)
-        self.verticalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(20, 59, 681, 431))
+        self.main_frame = QtWidgets.QFrame(self.centralwidget)
+        self.main_frame.setGeometry(QtCore.QRect(0, 52, 720, 461))
+        self.main_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.main_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.main_frame.setObjectName("main_frame")
+        self.verticalLayoutWidget = QtWidgets.QWidget(self.main_frame)
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 2, 720, 511))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
-        self.mainlayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
-        self.mainlayout.setContentsMargins(0, 0, 0, 0)
-        self.mainlayout.setObjectName("mainlayout")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setObjectName("verticalLayout")
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget_2.setCurrentIndex(0)
+        self.stackedWidget_2.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
